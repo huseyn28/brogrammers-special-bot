@@ -8,6 +8,7 @@ def add_handlers(dp:Dispatcher):
     dp.add_handler(CommandHandler("salambrat",hs.greeting_message_handler))
     dp.add_handler(CommandHandler("eledoyulyeti",hs.confirm_bro_handler))
     dp.add_handler(CommandHandler("meneoyret",hs.improve_confirm_bro_handler))
+    dp.add_handler(CommandHandler("info",hs.info_handler))
 
 
 def main():

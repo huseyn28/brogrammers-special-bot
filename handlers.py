@@ -12,26 +12,38 @@ def error_handler(update: Update, context: CallbackContext):
 
 def greeting_message_handler(update: Update, context: CallbackContext):
     # todo from_user_username = __get_username(update)
-    __send_message(update, __get_message_from_file(cst.FN_GREETING_MESSAGE))
+    listMessages = __get_message_from_file(cst.FN_GREETING_MESSAGE)
+    index = r.randint(0, len(listMessages) - 1)
+    __send_message(update, listMessages[index])
 
 
 def confirm_bro_handler(update: Update, context: CallbackContext):
-    __send_message(update,__get_message_from_file(cst.FN_CONFIRM_BRO))
+    listMessages = __get_message_from_file(cst.FN_CONFIRM_BRO)
+    index = r.randint(0, len(listMessages) - 1)
+    __send_message(update, listMessages[index])
 
 
 def improve_confirm_bro_handler(update: Update, context: CallbackContext):
-    improve_confirm_bro(context.args)
-    from_user_username = __get_username(update)
-    __send_message(update,cst.THANKS_FOR_IMPROVE.format(from_user_username))
+    if len(context.args) == 0:
+        __send_message(update,cst.IMPROVE_EXAMPLE)
+    else:
+        improve_confirm_bro(context.args)
+        from_user_username = __get_username(update)
+        __send_message(update,cst.THANKS_FOR_IMPROVE.format(from_user_username))
+
+
+def info_handler(update: Update, context: CallbackContext):
+    listMessages = __get_message_from_file(cst.FN_INFO)
+    text:str = "\n".join(listMessages)
+    __send_message(update,text)
 
 
 # todo create new python file for file operations
 def __get_message_from_file(file_name:str):
     file = open(file_name, "r")
     listMessages = file.readlines()
-    index = r.randint(0, len(listMessages) - 1)
     file.close()
-    return listMessages[index]
+    return listMessages
 
 
 def __send_message(update: Update, text:str):
