@@ -1,7 +1,7 @@
 import random as r
 import constants as cst
 
-from improver import improve_confirm_bro
+from improver import improve_confirm_bro, improve_music
 from telegram import Update
 from telegram.ext import CallbackContext
 
@@ -25,11 +25,26 @@ def confirm_bro_handler(update: Update, context: CallbackContext):
 
 def improve_confirm_bro_handler(update: Update, context: CallbackContext):
     if len(context.args) == 0:
-        __send_message(update,cst.IMPROVE_EXAMPLE)
+        __send_message(update, cst.IMPROVE_EXAMPLE_CONFIRM_BRO)
     else:
         improve_confirm_bro(context.args)
         from_user_username = __get_username(update)
         __send_message(update,cst.THANKS_FOR_IMPROVE.format(from_user_username))
+
+
+def music_handler(update: Update, context: CallbackContext):
+    listLinks = __get_message_from_file(cst.FN_MUSIC)
+    index = r.randint(0, len(listLinks) - 1)
+    __send_message(update, listLinks[index])
+
+
+def improve_music_handler(update: Update, context: CallbackContext):
+    if len(context.args) == 0:
+        __send_message(update,cst.IMPROVE_EXAMPLE_MUSIC)
+    else:
+        improve_music(context.args)
+        from_user_username = __get_username(update)
+        __send_message(update, cst.THANKS_FOR_IMPROVE.format(from_user_username))
 
 
 def info_handler(update: Update, context: CallbackContext):
