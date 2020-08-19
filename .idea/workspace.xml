@@ -20,18 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f71f3e73-4797-4e6f-887f-da7c1e9abaa4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/files/music.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/confirm_bro.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/confirm_bro.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/improver.py" beforeDir="false" afterPath="$PROJECT_DIR$/improver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,7 +100,8 @@
       <workItem from="1597593665662" duration="77000" />
       <workItem from="1597593763724" duration="1854000" />
       <workItem from="1597595621258" duration="2589000" />
-      <workItem from="1597832233422" duration="944000" />
+      <workItem from="1597832233422" duration="1220000" />
+      <workItem from="1597843970333" duration="1711000" />
     </task>
     <servers />
   </component>
