@@ -1,6 +1,7 @@
 import random as r
 import constants as cst
 import file_service
+import external_service
 
 from improver import improve_confirm_bro, improve_music
 from telegram import Update
@@ -54,6 +55,11 @@ def info_handler(update: Update, context: CallbackContext):
     listMessages = file_service.get_message_from_file(cst.FN_INFO)
     text:str = "\n".join(listMessages)
     __send_message(update,text)
+
+
+def random_meme_handler(update: Update, context: CallbackContext):
+    response = external_service.get_random_meme()
+    __send_message(update,cst.MEME_MESSAGE_TEMPLATE.format(response["caption"],response["category"],response["image"]))
 
 
 def __send_message(update: Update, text:str):

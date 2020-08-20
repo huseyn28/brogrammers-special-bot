@@ -10,6 +10,7 @@ def add_handlers(dp:Dispatcher):
     dp.add_handler(CommandHandler("meneoyret",hs.improve_confirm_bro_handler))
     dp.add_handler(CommandHandler("musuqu",hs.music_handler))
     dp.add_handler(CommandHandler("musuquoyret",hs.improve_music_handler))
+    dp.add_handler(CommandHandler("meme",hs.random_meme_handler))
     dp.add_handler(CommandHandler("info",hs.info_handler))
 
 

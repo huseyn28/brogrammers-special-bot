@@ -10,3 +10,8 @@ ERROR_MESSAGE = "Dinc dur görüm !!! Botda problem var, @hamidsultanzadeh ilə 
 IMPROVE_EXAMPLE_CONFIRM_BRO = "Komandanı bu şəkildə icra edin : \n\n/meneoyret hansisa bir cumle"
 IMPROVE_EXAMPLE_MUSIC = "Komandanı bu şəkildə icra edin : \n\n/musuquoyret link"
 LINK_MUST_BE_UNIQUE = "Aye şabalıd @{}, bu linki əlavə ediblər"
+MEME_MESSAGE_TEMPLATE = "Caption: {}\nCategory: {}\nLink: {}"
+
+# apis
+MEME_API_URL = "https://some-random-api.ml/meme"
+
