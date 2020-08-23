@@ -11,7 +11,10 @@ IMPROVE_EXAMPLE_CONFIRM_BRO = "Komandanı bu şəkildə icra edin : \n\n/meneoyr
 IMPROVE_EXAMPLE_MUSIC = "Komandanı bu şəkildə icra edin : \n\n/musuquoyret link"
 LINK_MUST_BE_UNIQUE = "Aye şabalıd @{}, bu linki əlavə ediblər"
 MEME_MESSAGE_TEMPLATE = "Caption: {}\nCategory: {}\nLink: {}"
+SPAM_MESSAGE = "@{}, qurcalama məni, əyməyim çənəvi"
 
 # apis
 MEME_API_URL = "https://some-random-api.ml/meme"
 
+# configuration
+USER_SPAM_DICT:dict = dict()

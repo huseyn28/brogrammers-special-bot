@@ -1,8 +1,9 @@
+from interceptors import logger_interceptor
 from telegram.ext import Updater, CommandHandler, Dispatcher
-
 import handlers as hs
 
 
+@logger_interceptor
 def add_handlers(dp:Dispatcher):
     dp.add_error_handler(hs.error_handler)
     dp.add_handler(CommandHandler("salambrat",hs.greeting_message_handler))
@@ -14,6 +15,7 @@ def add_handlers(dp:Dispatcher):
     dp.add_handler(CommandHandler("info",hs.info_handler))
 
 
+@logger_interceptor
 def main():
     updater = Updater('1050442412:AAGZyCp09LLFMg4tvqzuVKc1TePpVUjMlSQ',use_context=True)
     dp = updater.dispatcher
