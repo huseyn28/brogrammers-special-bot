@@ -27,7 +27,10 @@ def greeting_message_handler(update: Update, context: CallbackContext):
 def confirm_bro_handler(update: Update, context: CallbackContext):
     listMessages = file_service.get_message_from_file(cst.FN_CONFIRM_BRO)
     index = r.randint(0, len(listMessages) - 1)
-    telegram_util.send_message(update, listMessages[index])
+    message = listMessages[index]
+    if "@{}" in message:
+        message = message.format(telegram_util.get_username(update))
+    telegram_util.send_message(update, message)
 
 
 @spam_interceptor

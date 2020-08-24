@@ -1,5 +1,7 @@
 from functools import wraps
 
+import schedule
+
 from models.Logger import Logger
 from utils import telegram_util, util
 from constants import SPAM_MESSAGE
@@ -9,6 +11,7 @@ def spam_interceptor(func):
 
     @wraps(func)
     def wrapper(arg1,arg2):
+        schedule.run_pending()
         username = telegram_util.get_username(arg1)
         count = util.spam_counter(username)
         print("{} : {}".format(username, count))

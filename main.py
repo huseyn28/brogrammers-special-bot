@@ -1,6 +1,9 @@
-from interceptors import logger_interceptor
+import schedule
 from telegram.ext import Updater, CommandHandler, Dispatcher
+
 import handlers as hs
+from interceptors import logger_interceptor
+from tasks.scheduled_tasks import reset_all_spam_counts
 
 
 @logger_interceptor
@@ -13,6 +16,8 @@ def add_handlers(dp:Dispatcher):
     dp.add_handler(CommandHandler("musuquoyret",hs.improve_music_handler))
     dp.add_handler(CommandHandler("meme",hs.random_meme_handler))
     dp.add_handler(CommandHandler("info",hs.info_handler))
+
+    schedule.every(10).minutes.do(reset_all_spam_counts)
 
 
 @logger_interceptor
