@@ -78,5 +78,12 @@ def info_handler(update: Update, context: CallbackContext):
 def random_meme_handler(update: Update, context: CallbackContext):
     response = external_service.get_random_meme()
     telegram_util.send_message(update, cst.MEME_MESSAGE_TEMPLATE.format(response["caption"], response["category"], response["image"]))
+    
+@spam_interceptor
+@logger_interceptor
+def tag_handler(update: Update, context: CallbackContext):
+   telegram_util.send_message(update,"@hamidsultanzadeh @JustAydinn @Allahyarrr @NyzVortex @ram365 @knncortexx @Huseyn28")
+
+
 
 
