@@ -16,6 +16,7 @@ def add_handlers(dp:Dispatcher):
     dp.add_handler(CommandHandler("musuquoyret",hs.improve_music_handler))
     dp.add_handler(CommandHandler("meme",hs.random_meme_handler))
     dp.add_handler(CommandHandler("info",hs.info_handler))
+    dp.add_handler(CommandHandler("tag",hs.tag_handler))
 
     schedule.every(10).minutes.do(reset_all_spam_counts)
 
